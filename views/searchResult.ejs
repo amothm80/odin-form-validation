@@ -6,16 +6,9 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <!-- In views/index.ejs -->
-    <div>
-      <form action="/search" method="GET">
-        <input type="text" placeholder="search query" name="query" /><button type="submit">
-          Search
-        </button>
-      </form>
-    </div>
+    <!-- In views/searchResult.ejs -->
     <ul>
-      <% if (locals.users) {%> <% users.forEach(function(user) { %>
+      <% if (locals.results) {%> <% results.forEach(function(user) { %>
       <li>
         ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
         <div>Email: <%= user.email %></div>
@@ -38,6 +31,6 @@
       <% }); %> <% } %>
     </ul>
 
-    <a href="/create">Create a user</a>
+    <a href="/">Back to home</a>
   </body>
 </html>
